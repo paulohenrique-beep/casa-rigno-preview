@@ -1,0 +1,57 @@
+.origem {
+  background: var(--deep-green);
+  color: var(--cream);
+}
+
+.origem__content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.origem__overline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+}
+
+.origem__title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 32px;
+}
+
+.origem__title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.origem__text {
+  font-size: 1.0625rem;
+  color: rgba(245, 240, 232, 0.75);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .origem__title {
+    font-size: clamp(1.875rem, 7vw, 2.5rem);
+  }
+
+  .origem__text {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .origem__text {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+}

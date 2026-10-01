@@ -1,0 +1,180 @@
+:root {
+  /* Paleta Casa Rigno */
+  --cream: #F5F0E8;
+  --off-white: #FAF7F2;
+  --beige: #E8DFD3;
+  --warm-beige: #D4C5B2;
+  --coffee: #3D2B1F;
+  --coffee-light: #5C4033;
+  --soft-black: #1A1614;
+  --deep-green: #2D3A2E;
+  --deep-green-light: #3D4A3E;
+  --terracotta: #8B6F5A;
+  --gold: #C9A96E;
+  --gold-light: #D4BC8E;
+  --text-primary: #2A2522;
+  --text-secondary: #6B5D52;
+  --text-light: #9A8B7E;
+  --white: #FFFFFF;
+
+  /* Tipografia */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Espaçamentos */
+  --section-padding: clamp(80px, 12vw, 160px);
+  --container-max: 1400px;
+  --container-padding: clamp(24px, 5vw, 80px);
+
+  /* Transições */
+  --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--off-white);
+  overflow-x: hidden;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: var(--coffee);
+  color: var(--cream);
+}
+
+/* Scrollbar elegante */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-beige);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilitários */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+/* Animações de reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s var(--transition-smooth), transform 0.9s var(--transition-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: clamp(60px, 10vw, 100px);
+    --container-padding: 20px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .reveal {
+    transform: translateY(24px);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+}
+
+/* Prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

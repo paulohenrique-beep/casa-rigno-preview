@@ -1,0 +1,157 @@
+.experiencias {
+  background: var(--off-white);
+}
+
+.experiencias__header {
+  text-align: center;
+  margin-bottom: clamp(64px, 8vw, 100px);
+}
+
+.experiencias__overline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 24px;
+}
+
+.experiencias__title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.experiencias__title em {
+  font-style: italic;
+  color: var(--coffee);
+}
+
+.experiencias__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+  margin-bottom: clamp(48px, 6vw, 80px);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experiencias__card {
+  position: relative;
+}
+
+.experiencias__card-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.experiencias__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--transition-smooth);
+}
+
+.experiencias__card:hover .experiencias__card-img {
+  transform: scale(1.05);
+}
+
+.experiencias__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 22, 20, 0.7) 0%,
+    rgba(26, 22, 20, 0.1) 60%,
+    transparent 100%
+  );
+  transition: background 0.4s var(--transition-smooth);
+}
+
+.experiencias__card:hover .experiencias__card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(26, 22, 20, 0.8) 0%,
+    rgba(26, 22, 20, 0.2) 60%,
+    transparent 100%
+  );
+}
+
+.experiencias__card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  z-index: 2;
+}
+
+.experiencias__card-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.experiencias__card-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.experiencias__cta {
+  text-align: center;
+}
+
+.experiencias__cta-btn {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coffee);
+  padding: 18px 48px;
+  border: 1px solid var(--coffee);
+  border-radius: 100px;
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.experiencias__cta-btn:hover {
+  background: var(--coffee);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .experiencias__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experiencias__title {
+    font-size: clamp(1.875rem, 7vw, 2.5rem);
+  }
+
+  .experiencias__card-title {
+    font-size: 1.5rem;
+  }
+
+  .experiencias__card-desc {
+    font-size: 0.875rem;
+  }
+
+  .experiencias__card-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experiencias__card-image {
+    aspect-ratio: 16/10;
+  }
+}

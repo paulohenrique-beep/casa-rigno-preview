@@ -1,0 +1,44 @@
+
+PACOTE DE FOTOS - CASA RIGNO
+============================
+
+Objetivo
+--------
+Criar automaticamente 10 arquivos JPG reais para usar na prévia do site,
+salvando tudo em:
+
+src/assets/rigno/
+
+Como usar no Windows
+---------------------
+1. Extraia este ZIP dentro da raiz do seu projeto.
+2. Abra PowerShell/Terminal na raiz do projeto.
+3. Execute:
+
+powershell -ExecutionPolicy Bypass -File .\baixar_fotos_casa_rigno.ps1
+
+4. Ao finalizar, abra:
+
+src/assets/rigno/
+
+Arquivos esperados
+------------------
+01-cafe-da-manha-presunto-omelete.jpg
+02-iced-latte-casa-rigno.jpg
+03-brunch-mesa-casa-rigno.jpg
+04-avocado-toast.jpg
+05-mesa-brunch-completa.jpg
+06-paes-artesanais.jpg
+07-cafe-waffle-brunch.jpg
+08-interior-produtos-artesanais.jpg
+09-cafe-da-manha-sucos.jpg
+10-ambiente-casa-rigno-google.jpg
+
+Observação importante
+---------------------
+O Instagram bloqueia acesso/download automatizado neste ambiente.
+Por isso, o pacote usa imagens públicas reais da Casa Rigno disponibilizadas
+em listagens web e imagens originadas de Google/Maps/avaliações públicas.
+
+Para o site oficial definitivo, peça à empresa os arquivos originais das fotos
+ou autorização de uso das imagens do Instagram/Google.

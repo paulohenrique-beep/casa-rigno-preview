@@ -1,0 +1,91 @@
+.atmosfera {
+  background: var(--off-white);
+}
+
+.atmosfera__header {
+  text-align: center;
+  margin-bottom: clamp(64px, 8vw, 100px);
+}
+
+.atmosfera__overline {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 24px;
+}
+
+.atmosfera__title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.atmosfera__title em {
+  font-style: italic;
+  color: var(--coffee);
+}
+
+.atmosfera__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.atmosfera__item {
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+}
+
+.atmosfera__item--large {
+  aspect-ratio: 3/4;
+}
+
+.atmosfera__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--transition-smooth);
+}
+
+.atmosfera__item:hover .atmosfera__img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .atmosfera__title {
+    font-size: clamp(1.875rem, 7vw, 2.5rem);
+  }
+
+  .atmosfera__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .atmosfera__item,
+  .atmosfera__item--large {
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .atmosfera__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .atmosfera__item,
+  .atmosfera__item--large {
+    aspect-ratio: 16/10;
+  }
+}
+
+@media (max-width: 360px) {
+  .atmosfera__grid {
+    gap: 12px;
+  }
+}
