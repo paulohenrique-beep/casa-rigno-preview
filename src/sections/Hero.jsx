@@ -1,10 +1,12 @@
 import { useRef, useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import './Hero.css'
+import poster from '../assets/rigno/imgi_42_670170794_18064709594691917_284318161864360120_n.jpg'
 
 export default function Hero() {
   const videoRef = useRef(null)
   const [videoReady, setVideoReady] = useState(false)
+  const [videoError, setVideoError] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -15,18 +17,23 @@ export default function Hero() {
       setVideoReady(true)
     }
 
+    const handleError = () => {
+      setVideoError(true)
+    }
+
     if (video.readyState >= 1) {
       setPlayback()
     } else {
       video.addEventListener('loadedmetadata', setPlayback, { once: true })
     }
 
-    // Garante que o playbackRate permanece após carregamento
     video.addEventListener('canplay', setPlayback)
+    video.addEventListener('error', handleError)
 
     return () => {
       video.removeEventListener('loadedmetadata', setPlayback)
       video.removeEventListener('canplay', setPlayback)
+      video.removeEventListener('error', handleError)
     }
   }, [])
 
@@ -34,18 +41,27 @@ export default function Hero() {
     <section id="inicio" className="hero">
       {/* Video Background */}
       <div className="hero__video-wrapper">
-        <video
-          ref={videoRef}
-          className="hero__video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster=""
-        >
-          <source src="/video/hero-rigno.mp4" type="video/mp4" />
-        </video>
+        {!videoError && (
+          <video
+            ref={videoRef}
+            className="hero__video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={poster}
+          >
+            <source src="/video/hero-rigno.mp4" type="video/mp4" />
+          </video>
+        )}
+        {videoError && (
+          <img
+            src={poster}
+            alt="Casa Rigno"
+            className="hero__video hero__video--poster"
+          />
+        )}
 
         {/* Overlay sofisticado */}
         <div className="hero__overlay" />
@@ -64,16 +80,14 @@ export default function Hero() {
             Onde cada xícara conta uma origem e cada encontro vira memória.
           </p>
           <div className="hero__ctas">
-            <a href="#a-casa" className="hero__cta hero__cta--primary">
-              Conheça a Casa
-            </a>
             <a
               href="https://www.hubt.com.br/casarigno/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero__cta hero__cta--secondary"
+              className="hero__cta hero__cta--primary"
             >
-              Ver menu
+              Ver cardápio
+            </a>
+            <a href="#localizacao" className="hero__cta hero__cta--secondary">
+              Como chegar
             </a>
           </div>
         </div>

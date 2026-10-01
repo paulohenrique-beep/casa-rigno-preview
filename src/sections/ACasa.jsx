@@ -1,5 +1,5 @@
 import './ACasa.css'
-import interior from '../assets/rigno/08-interior-produtos-artesanais.jpg'
+import ambiente from '../assets/rigno/imgi_61_629622924_18057166913691917_7687581344029541434_n.jpg'
 
 export default function ACasa() {
   return (
@@ -24,8 +24,8 @@ export default function ACasa() {
           </div>
           <div className="a-casa__image-wrapper reveal reveal-delay-1">
             <img
-              src={interior}
-              alt="Interior da Casa Rigno com produtos artesanais"
+              src={ambiente}
+              alt="Ambiente interno da Casa Rigno com arcos, plantas e mesas"
               className="a-casa__image"
             />
           </div>

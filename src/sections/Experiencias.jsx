@@ -1,17 +1,17 @@
 import './Experiencias.css'
-import brunch from '../assets/rigno/05-mesa-brunch-completa.jpg'
-import cafeManha from '../assets/rigno/01-cafe-da-manha-presunto-omelete.jpg'
+import vinho from '../assets/rigno/imgi_21_588474149_18050667161691917_2193727044225762208_n.jpg'
+import sanduiche from '../assets/rigno/imgi_17_720417642_18072695504691917_4274961719977558904_n.jpg'
 
 const categorias = [
   {
-    nome: 'Brunch',
-    descricao: 'Combinações para começar bem o dia',
-    imagem: brunch,
+    nome: 'Gastronomia',
+    descricao: 'Pratos e combinações para todos os momentos',
+    imagem: vinho,
   },
   {
-    nome: 'Café da Manhã',
-    descricao: 'Clássicos para uma manhã perfeita',
-    imagem: cafeManha,
+    nome: 'Brunch',
+    descricao: 'Combinações para começar bem o dia',
+    imagem: sanduiche,
   },
 ]
 
@@ -56,7 +56,7 @@ export default function Experiencias() {
             rel="noopener noreferrer"
             className="experiencias__cta-btn"
           >
-            Explorar o menu
+            Ver cardápio
           </a>
         </div>
       </div>

@@ -1,19 +1,19 @@
 import './Destaques.css'
-import sucos from '../assets/rigno/09-cafe-da-manha-sucos.jpg'
-import avocadoToast from '../assets/rigno/04-avocado-toast.jpg'
+import sanduiche from '../assets/rigno/imgi_17_720417642_18072695504691917_4274961719977558904_n.jpg'
+import panetone from '../assets/rigno/imgi_18_600081021_18051172025691917_1904922961473131227_n.jpg'
 
 const destaques = [
   {
-    nome: 'Sucos Naturais',
-    descricao: 'Freshly squeezed com frutas da estação',
-    tag: 'Bebidas',
-    imagem: sucos,
+    nome: 'Sanduíche de Brioche',
+    descricao: 'Brioche artesanal com ovos e queijo',
+    tag: 'Brunch',
+    imagem: sanduiche,
   },
   {
-    nome: 'Avocado Toast',
-    descricao: 'Pão artesanal com abacate e temperos especiais',
-    tag: 'Saudável',
-    imagem: avocadoToast,
+    nome: 'Panetone',
+    descricao: 'Panetone artesanal com chocolate',
+    tag: 'Confeitaria',
+    imagem: panetone,
   },
 ]
 

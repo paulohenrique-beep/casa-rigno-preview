@@ -1,19 +1,19 @@
 import { Instagram as InstagramIcon } from 'lucide-react'
 import './Instagram.css'
-import img1 from '../assets/rigno/01-cafe-da-manha-presunto-omelete.jpg'
-import img2 from '../assets/rigno/02-iced-latte-casa-rigno.jpg'
-import img3 from '../assets/rigno/03-brunch-mesa-casa-rigno.jpg'
-import img4 from '../assets/rigno/04-avocado-toast.jpg'
-import img5 from '../assets/rigno/05-mesa-brunch-completa.jpg'
-import img6 from '../assets/rigno/06-paes-artesanais.jpg'
+import img1 from '../assets/rigno/imgi_17_720417642_18072695504691917_4274961719977558904_n.jpg'
+import img2 from '../assets/rigno/imgi_42_670170794_18064709594691917_284318161864360120_n.jpg'
+import img3 from '../assets/rigno/imgi_35_590427571_18050667818691917_4840122016071281683_n.jpg'
+import img4 from '../assets/rigno/imgi_18_716550580_18596146474029537_2205228871764035072_n.jpg'
+import img5 from '../assets/rigno/imgi_41_670787089_18065291048691917_4950686231222092709_n.jpg'
+import img6 from '../assets/rigno/imgi_61_629622924_18057166913691917_7687581344029541434_n.jpg'
 
 const images = [
-  { src: img1, alt: 'Café da manhã com presunto e omelete' },
-  { src: img2, alt: 'Iced latte da Casa Rigno' },
-  { src: img3, alt: 'Mesa de brunch' },
-  { src: img4, alt: 'Avocado toast' },
-  { src: img5, alt: 'Mesa completa de brunch' },
-  { src: img6, alt: 'Pães artesanais' },
+  { src: img1, alt: 'Sanduíche de brioche com ovos e queijo' },
+  { src: img2, alt: 'Café com latte art e acompanhamentos' },
+  { src: img3, alt: 'Croissant artesanal com mussarela e tomate' },
+  { src: img4, alt: 'Doces e confeitaria artesanal' },
+  { src: img5, alt: 'Ambiente externo com mesas e plantas' },
+  { src: img6, alt: 'Ambiente interno com arcos e plantas' },
 ]
 
 export default function Instagram() {

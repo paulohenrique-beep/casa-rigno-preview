@@ -7,19 +7,16 @@ export default function Origem() {
         <div className="origem__content reveal">
           <span className="origem__overline">Origem</span>
           <h2 className="origem__title">
-            Uma família,<br />
+            Uma casa,<br />
             <em>uma paixão pelo café.</em>
           </h2>
           <p className="origem__text">
-            A história da Casa Rigno se confunde com a própria história do café
-            no Brasil. Uma família que dedicou gerações ao cultivo, à seleção
-            e à torra de grãos especiais — e que transformou essa paixão em
-            um espaço onde todos são bem-vindos.
+            A Casa Rigno é um espaço em Vitória da Conquista que celebra a cultura do café
+            especial, a padaria artesanal e a gastronomia. Um lugar pensado para
+            encontros, histórias e momentos que ficam.
           </p>
           <p className="origem__text">
-            Cada xícara servida na casa carrega essa herança: o cuidado de
-            quem conhece o café da origem à extração, e o orgulho de quem
-            compartilha essa tradição com Vitória da Conquista.
+            Cada xícara servida na casa carrega cuidado e tradição — do grão à extração.
           </p>
         </div>
       </div>

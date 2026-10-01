@@ -1,19 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 import './Header.css'
 
 const navLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'A Casa', href: '#a-casa' },
-  { label: 'Experiência', href: '#experiencia' },
-  { label: 'Menu', href: '#menu' },
   { label: 'Café', href: '#cafe' },
+  { label: 'Cardápio', href: '#menu' },
+  { label: 'Experiência', href: '#experiencia' },
   { label: 'Localização', href: '#localizacao' },
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,33 @@ export default function Header() {
     }
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
+
+  useEffect(() => {
+    if (!mobileOpen) return
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [mobileOpen])
+
+  const openMenu = () => {
+    setMobileOpen(true)
+    setTimeout(() => {
+      const firstLink = menuRef.current?.querySelector('a')
+      firstLink?.focus()
+    }, 100)
+  }
+
+  const closeMenu = () => {
+    setMobileOpen(false)
+    buttonRef.current?.focus()
+  }
 
   return (
     <>
@@ -55,12 +84,15 @@ export default function Header() {
               rel="noopener noreferrer"
               className="header__cta"
             >
-              Ver menu
+              Ver cardápio
             </a>
             <button
+              ref={buttonRef}
               className="header__burger"
-              onClick={() => setMobileOpen(true)}
+              onClick={openMenu}
               aria-label="Abrir menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               <Menu size={24} strokeWidth={1.5} />
             </button>
@@ -69,12 +101,16 @@ export default function Header() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
+      <div
+        id="mobile-menu"
+        ref={menuRef}
+        className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}
+      >
         <div className="mobile-menu__header">
           <span className="mobile-menu__logo">CASA RIGNO</span>
           <button
             className="mobile-menu__close"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMenu}
             aria-label="Fechar menu"
           >
             <X size={28} strokeWidth={1.5} />
@@ -87,7 +123,7 @@ export default function Header() {
               href={link.href}
               className="mobile-menu__link"
               style={{ transitionDelay: `${i * 0.05}s` }}
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMenu}
             >
               {link.label}
             </a>
@@ -97,9 +133,9 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="mobile-menu__cta"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMenu}
           >
-            Ver menu
+            Ver cardápio
           </a>
         </nav>
       </div>

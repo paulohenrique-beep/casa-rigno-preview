@@ -1,7 +1,7 @@
 import './Atmosfera.css'
-import mesaCompleta from '../assets/rigno/05-mesa-brunch-completa.jpg'
-import brunch from '../assets/rigno/03-brunch-mesa-casa-rigno.jpg'
-import cafeManha from '../assets/rigno/01-cafe-da-manha-presunto-omelete.jpg'
+import ambienteExterno from '../assets/rigno/imgi_41_670787089_18065291048691917_4950686231222092709_n.jpg'
+import mesaCafe from '../assets/rigno/imgi_42_670170794_18064709594691917_284318161864360120_n.jpg'
+import fachada from '../assets/rigno/imgi_51_549408568_1084539610495533_5530965006932230515_n.jpg'
 
 export default function Atmosfera() {
   return (
@@ -18,22 +18,22 @@ export default function Atmosfera() {
         <div className="atmosfera__grid">
           <div className="atmosfera__item atmosfera__item--large reveal">
             <img
-              src={mesaCompleta}
-              alt="Mesa completa de brunch"
+              src={ambienteExterno}
+              alt="Ambiente externo da Casa Rigno com mesas e plantas"
               className="atmosfera__img"
             />
           </div>
           <div className="atmosfera__item reveal reveal-delay-1">
             <img
-              src={brunch}
-              alt="Mesa de brunch"
+              src={mesaCafe}
+              alt="Mesa com café e acompanhamentos"
               className="atmosfera__img"
             />
           </div>
           <div className="atmosfera__item reveal reveal-delay-2">
             <img
-              src={cafeManha}
-              alt="Café da manhã com presunto e omelete"
+              src={fachada}
+              alt="Fachada da Casa Rigno"
               className="atmosfera__img"
             />
           </div>

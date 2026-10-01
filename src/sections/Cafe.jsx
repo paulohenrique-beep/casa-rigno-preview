@@ -1,7 +1,7 @@
 import './Cafe.css'
-import icedLatte from '../assets/rigno/02-iced-latte-casa-rigno.jpg'
-import paes from '../assets/rigno/06-paes-artesanais.jpg'
-import waffle from '../assets/rigno/07-cafe-waffle-brunch.jpg'
+import cafe from '../assets/rigno/imgi_42_670170794_18064709594691917_284318161864360120_n.jpg'
+import croissant from '../assets/rigno/imgi_35_590427571_18050667818691917_4840122016071281683_n.jpg'
+import doces from '../assets/rigno/imgi_18_716550580_18596146474029537_2205228871764035072_n.jpg'
 
 export default function Cafe() {
   return (
@@ -19,45 +19,42 @@ export default function Cafe() {
           <div className="cafe__item reveal">
             <div className="cafe__item-image">
               <img
-                src={icedLatte}
-                alt="Iced latte da Casa Rigno"
+                src={cafe}
+                alt="Café com latte art e acompanhamentos na Casa Rigno"
                 className="cafe__item-img"
               />
             </div>
-            <h3 className="cafe__item-title">Origem</h3>
+            <h3 className="cafe__item-title">Café</h3>
             <p className="cafe__item-text">
-              Grãos selecionados de produtores que compartilham nossa paixão
-              por qualidade e sustentabilidade.
+              Espresso, filtrados e métodos especiais preparados com cuidado.
             </p>
           </div>
 
           <div className="cafe__item reveal reveal-delay-1">
             <div className="cafe__item-image">
               <img
-                src={paes}
-                alt="Pães artesanais da Casa Rigno"
+                src={croissant}
+                alt="Croissant artesanal com mussarela e tomate"
                 className="cafe__item-img"
               />
             </div>
-            <h3 className="cafe__item-title">Torra</h3>
+            <h3 className="cafe__item-title">Padaria</h3>
             <p className="cafe__item-text">
-              Torra cuidadosa que respeita as características únicas de cada
-              origem, revelando sabores autênticos.
+              Croissants e pães artesanais, frescos todos os dias.
             </p>
           </div>
 
           <div className="cafe__item reveal reveal-delay-2">
             <div className="cafe__item-image">
               <img
-                src={waffle}
-                alt="Mesa de brunch com waffle e café"
+                src={doces}
+                alt="Doces e confeitaria artesanal da Casa Rigno"
                 className="cafe__item-img"
               />
             </div>
-            <h3 className="cafe__item-title">Preparo</h3>
+            <h3 className="cafe__item-title">Confeitaria</h3>
             <p className="cafe__item-text">
-              Métodos precisos e extração equilibrada para uma xícara que
-              conta a história do grão.
+              Doces finos e sobremesas autorais para acompanhar o café.
             </p>
           </div>
         </div>
